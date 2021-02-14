@@ -1,5 +1,5 @@
-name: template-tutorial
-title: Template Tutorial
+name: rh-upm-autoscaling
+title: Auotscaling applications with Openshift
 version: master
 nav:
   - modules/ROOT/nav.adoc
