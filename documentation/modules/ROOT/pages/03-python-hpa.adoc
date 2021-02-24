@@ -10,13 +10,13 @@ In this exercise, you will create a Python application to simulate Memory load t
 Python application:
 
 * Name: stress-python
-* Repo: https://github.com/albertogd/rh-serverless.git
+* Repo: https://github.com/albertogd/rh-upm-autoscaling.git
 * Branch: master
 * Path: apps/hpa/stress-python
 
 [source,bash,subs="+macros,+attributes"]
 ----
-$ oc new-app https://github.com/albertogd/rh-serverless --context-dir apps/hpa/stress-python --name stress-python
+$ oc new-app https://github.com/albertogd/rh-upm-autoscaling.git --context-dir apps/hpa/stress-python --name stress-python
 $ oc expose svc/stress-python
 ----
 

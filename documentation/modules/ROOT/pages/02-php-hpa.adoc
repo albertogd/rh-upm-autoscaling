@@ -10,13 +10,13 @@ In this exercise, you will create a PHP application to simulate CPU load to test
 PHP application:
 
 - *Name*: stress-php
-- *Repo*: https://github.com/albertogd/rh-serverless.git
+- *Repo*: https://github.com/albertogd/rh-upm-autoscaling.git
 - *Branch*: master
 - *Path*: apps/hpa/stress-php
 
 [source,bash,subs="+macros,+attributes"]
 ----
-$ oc new-app https://github.com/albertogd/rh-serverles --context-dir apps/hpa/stress-php --name stress-php
+$ oc new-app https://github.com/albertogd/rh-upm-autoscaling.git --context-dir apps/hpa/stress-php --name stress-php
 $ oc expose svc/stress-php
 ----
 
