@@ -197,11 +197,7 @@ $ oc expose svc/stress-php</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ oc describe PodMetrics test-hpa | grep "Cpu\|Memory"
-    Cpu:     0
-    Memory:  26840Ki
-
-$ oc get PodMetrics
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ oc get PodMetrics
 NAME                                   CPU      MEMORY          WINDOW
 stress-php-787bc8b45b-jwc2r            2m       33256Ki          5m0s</code></pre>
 </div>
@@ -244,7 +240,7 @@ stress-php        Deployment/stress-php              3%/50%           1         
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl <a href="http://$(oc" class="bare">http://$(oc</a> get route stress-python -o json | jq -r '.spec.host')/cpu/2</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl <a href="http://$(oc" class="bare">http://$(oc</a> get route stress-php -o json | jq -r '.spec.host')/cpu.php?minutes=2</code></pre>
 </div>
 </div>
 <div class="paragraph">

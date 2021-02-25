@@ -212,7 +212,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: test-hpa
+    name: stress-python
   minReplicas: 1
   maxReplicas: 10
   metrics:
@@ -238,8 +238,9 @@ Get the application route, and make a request of 200 MB for 2 minute. After 2 mi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ oc describe PodMetrics test-hpa | grep "Memory"
-    Memory:     230532Ki
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ oc get podMetrics
+NAME                          CPU   MEMORY    WINDOW
+stress-python-7799f7d976-dh5wl   1m    34856Ki   5m0s
 
 $ oc get hpa
 NAME              REFERENCE             TARGETS                 MINPODS   MAXPODS   REPLICAS   AGE
