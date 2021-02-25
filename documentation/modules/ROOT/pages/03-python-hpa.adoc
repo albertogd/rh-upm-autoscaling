@@ -67,7 +67,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1 
     kind: Deployment 
-    name: test-hpa 
+    name: stress-python
   minReplicas: 1 
   maxReplicas: 10 
   metrics: 
@@ -91,8 +91,9 @@ In another terminal, check with PodMetrics the current CPU load, the hpa and the
 
 [source,bash,subs="+macros,+attributes"]
 ----
-$ oc describe PodMetrics test-hpa | grep "Memory"
-    Memory:     230532Ki
+$ oc get podMetrics
+NAME                          CPU   MEMORY    WINDOW
+stress-python-7799f7d976-dh5wl   1m    34856Ki   5m0s
 
 $ oc get hpa
 NAME              REFERENCE             TARGETS                 MINPODS   MAXPODS   REPLICAS   AGE

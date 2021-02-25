@@ -54,10 +54,6 @@ HorizontalPodAutoscaler depends on metrics, so your cluster must have metrics co
 
 [source,bash,subs="+macros,+attributes"]
 ----
-$ oc describe PodMetrics test-hpa | grep "Cpu\|Memory"
-    Cpu:     0
-    Memory:  26840Ki
-
 $ oc get PodMetrics
 NAME                                   CPU      MEMORY          WINDOW
 stress-php-787bc8b45b-jwc2r            2m       33256Ki          5m0s
@@ -94,7 +90,7 @@ The Python application has an endpoint  /cpu/<minutes>. Make the request using c
 
 [source,bash,subs="+macros,+attributes"]
 ----
-$ curl http://$(oc get route stress-python -o json | jq -r '.spec.host')/cpu/2
+$ curl http://$(oc get route stress-php -o json | jq -r '.spec.host')/cpu.php?minutes=2
 ----
 
 In another terminal, check with PodMetrics the current CPU load, the hpa and the number of pods. 
